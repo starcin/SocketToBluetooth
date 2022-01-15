@@ -14,7 +14,7 @@ const io = new Server(httpServer, {
 let deviceId
 
 io.on("connection", (socket) => {
-	console.log("a client connected")
+	console.log("a client with id: ", socket.id, " connected")
 	socket.on("disconnect", (reason) => {
 		console.log("client with id: ", socket.id, " disconnected because", reason)
 	})
