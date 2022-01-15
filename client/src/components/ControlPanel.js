@@ -17,7 +17,10 @@ function ControlPanel({ socket }) {
 	}
 
 	// useEffect(() => {
-	// 	// console.log(socket, socket.id, "effect çi")
+	// 	socket.on("connect", () => {
+	// 		console.log("I ", socket.id, " am connected!")
+	// 		socket.emit("i-am-device", socket.id)
+	// 	})
 	// })
 
 	return (
@@ -27,7 +30,6 @@ function ControlPanel({ socket }) {
 			<LabelWithValue label={"Speed"} value={speed} post={"km/h"} />
 			<LabelWithValue label={"Rev"} value={rev} post={"rpm"} />
 			<LabelWithValue label={"Gear"} value={gear} />
-			{/* {console.log(socket.id, "rdd")} */}
 		</div>
 	)
 }

@@ -11,10 +11,16 @@ const io = new Server(httpServer, {
 	},
 })
 
+let deviceId
+
 io.on("connection", (socket) => {
 	console.log("a client connected")
 	socket.on("disconnect", (reason) => {
 		console.log("client with id: ", socket.id, " disconnected because", reason)
+	})
+
+	socket.on("i-am-device", (id) => {
+		deviceId = id
 	})
 
 	socket.on("some-event", (arg) => {
@@ -22,7 +28,7 @@ io.on("connection", (socket) => {
 	})
 
 	socket.on("bucket", (command) => {
-		console.log(command)
+		io.to(deviceId).emit("bucket", command)
 	})
 })
 
