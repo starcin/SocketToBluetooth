@@ -12,9 +12,17 @@ const io = new Server(httpServer, {
 })
 
 io.on("connection", (socket) => {
-	console.log("a user connected")
+	console.log("a client connected")
 	socket.on("disconnect", (reason) => {
-		console.log("user disconnected because", reason)
+		console.log("client with id: ", socket.id, " disconnected because", reason)
+	})
+
+	socket.on("some-event", (arg) => {
+		console.log(arg)
+	})
+
+	socket.on("bucket", (command) => {
+		console.log(command)
 	})
 })
 
