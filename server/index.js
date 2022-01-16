@@ -14,13 +14,14 @@ const io = new Server(httpServer, {
 let deviceId
 
 io.on("connection", (socket) => {
-	console.log("a client with id: ", socket.id, " connected")
+	console.log("a client with id:", socket.id, "connected")
 	socket.on("disconnect", (reason) => {
-		console.log("client with id: ", socket.id, " disconnected because", reason)
+		console.log("client with id:", socket.id, "disconnected because", reason)
 	})
 
 	socket.on("i-am-device", (id) => {
 		deviceId = id
+		console.log("The device id is:", deviceId)
 	})
 
 	socket.on("some-event", (arg) => {
