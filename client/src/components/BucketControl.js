@@ -20,6 +20,7 @@ function BucketControl({ bucketCommandEvent }) {
 			>
 				Bucket UP
 			</button>
+			<h1 className="text-3l font-bold underline">abcde</h1>
 			<button
 				onMouseDown={bucketDown}
 				onMouseUp={bucketStop}
