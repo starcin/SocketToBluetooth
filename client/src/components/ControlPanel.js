@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import BucketControl from "./BucketControl"
+import BucketControl from "./BucketControl/BucketControl"
 import LabelWithValue from "./LabelWithValue"
 
 function ControlPanel({ socket }) {
