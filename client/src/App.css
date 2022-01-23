@@ -1,0 +1,34 @@
+svg {
+	height: 100%;
+	width: 100%;
+}
+
+.button_rubber:first-of-type {
+	border-radius: 20% 20% 3% 3%;
+}
+
+.button_rubber:last-of-type {
+	border-radius: 3% 3% 20% 20%;
+}
+
+.button_rubber {
+	display: flex;
+	height: 50%;
+	border-radius: 3% 3% 3% 3%;
+	fill: rgb(179, 184, 189);
+	padding: 10%;
+	justify-content: center;
+	background-image: url("images/button_rubber_bg.svg");
+}
+
+.button_rubber:active {
+	fill: rgb(255, 238, 144);
+	stroke: goldenrod;
+	stroke-width: 1%;
+}
+
+.control_bucket {
+	flex-direction: column;
+	width: 100px;
+	height: 170px;
+}

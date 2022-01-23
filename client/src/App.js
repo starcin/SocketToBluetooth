@@ -1,4 +1,4 @@
-import "./index.css"
+import "./App.css"
 import { useEffect, useState } from "react"
 import ControlPanel from "./components/ControlPanel"
 const { io } = require("socket.io-client")

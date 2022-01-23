@@ -14,7 +14,7 @@ function BucketControl({ bucketCommandEvent }) {
 	}
 
 	return (
-		<div className="flex flex-col w-24 h-40">
+		<div className="control_bucket">
 			<BucketButton
 				direction={"UP"}
 				onButtonUp={bucketUp}

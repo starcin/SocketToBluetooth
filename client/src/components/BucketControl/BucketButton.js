@@ -6,7 +6,6 @@ function BucketButton({ direction, onButtonDown, onButtonUp }) {
 					// border: "1px solid pink",
 				}
 			}
-			className="fill-gray-300 group-active:stroke-amber-300 group-active:stroke-[12px] group-active:fill-amber-100"
 			version="1.1"
 			viewBox="0 0 461.894 461.894"
 			enable-background="new 0 0 461.894 461.894"
@@ -22,7 +21,6 @@ function BucketButton({ direction, onButtonDown, onButtonUp }) {
 					// border: "1px solid pink",
 				}
 			}
-			className="fill-gray-300 group-active:stroke-amber-300 group-active:stroke-[12px] group-active:fill-amber-100"
 			version="1.1"
 			viewBox="0 0 456.747 456.747"
 			enable-background="new 0 0 456.747 456.747"
@@ -36,7 +34,7 @@ function BucketButton({ direction, onButtonDown, onButtonUp }) {
 
 	return (
 		<button
-			className="bg-[url('components/BucketControl/button_bg.svg')] group p-4 h-1/2 flex items-center first:rounded-t-2xl last:rounded-b-2xl"
+			className="button_rubber"
 			onMouseDown={onButtonDown}
 			onMouseUp={onButtonUp}
 			onMouseLeave={onButtonUp}
