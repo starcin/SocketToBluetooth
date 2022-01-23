@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import BucketControl from "./BucketControl/BucketControl"
+import BucketControl from "./BucketControl"
+import Speedometer from "./Speedometer"
 import LabelWithValue from "./LabelWithValue"
 
 function ControlPanel({ socket }) {
@@ -14,6 +15,7 @@ function ControlPanel({ socket }) {
 
 	function onBucketCommand(command) {
 		socket.emit("bucket", command)
+		setSpeed(speed + 10)
 	}
 
 	// useEffect(() => {
@@ -27,6 +29,7 @@ function ControlPanel({ socket }) {
 		<div className="control-panel">
 			<button onClick={emitSomething}> BTN</button>
 			<BucketControl bucketCommandEvent={onBucketCommand} />
+			<Speedometer speed={speed} />
 			<LabelWithValue label={"Speed"} value={speed} post={"km/h"} />
 			<LabelWithValue label={"Rev"} value={rev} post={"rpm"} />
 			<LabelWithValue label={"Gear"} value={gear} />

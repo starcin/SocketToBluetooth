@@ -23,12 +23,18 @@ svg {
 
 .button_rubber:active {
 	fill: rgb(255, 238, 144);
+	padding: 10.5%;
 	stroke: goldenrod;
 	stroke-width: 1%;
 }
 
 .control_bucket {
+	display: flex;
 	flex-direction: column;
 	width: 100px;
 	height: 170px;
+}
+
+.speedometer {
+	width: 250px;
 }

@@ -3,6 +3,7 @@ import BucketButton from "./BucketButton"
 function BucketControl({ bucketCommandEvent }) {
 	function bucketUp() {
 		bucketCommandEvent("UP")
+		console.log("UPPP")
 	}
 
 	function bucketDown() {
@@ -17,13 +18,13 @@ function BucketControl({ bucketCommandEvent }) {
 		<div className="control_bucket">
 			<BucketButton
 				direction={"UP"}
-				onButtonUp={bucketUp}
-				onButtonDown={bucketStop}
+				onButtonUp={bucketStop}
+				onButtonDown={bucketUp}
 			/>
 			<BucketButton
 				direction={"DOWN"}
-				onButtonUp={bucketDown}
-				onButtonDown={bucketStop}
+				onButtonUp={bucketStop}
+				onButtonDown={bucketDown}
 			/>
 		</div>
 	)
