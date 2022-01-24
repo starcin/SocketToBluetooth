@@ -15,12 +15,18 @@ function ControlPanel({ socket }) {
 
 	function onBucketCommand(command) {
 		socket.emit("bucket", command)
-		setSpeed(speed + 10)
 	}
 
-	socket.on("speedUpdate", (speedVal) => {setSpeed(speedVal)})
-	socket.on("revUpdate", (speedVal) => {setSpeed(speedVal)})
+	function onGearChange(gear) {
+		socket.emit("gear", gear)
+	}
 
+	socket.on("speedUpdate", (speedVal) => {
+		setSpeed(speedVal)
+	})
+	socket.on("revUpdate", (revVal) => {
+		setRev(revVal)
+	})
 
 	// useEffect(() => {
 	// 	socket.on("connect", () => {

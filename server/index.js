@@ -31,6 +31,18 @@ io.on("connection", (socket) => {
 	socket.on("bucket", (command) => {
 		io.to(deviceId).emit("bucket", command)
 	})
+
+	socket.on("gear", (gear) => {
+		io.to(deviceId).emit("gear", gear)
+	})
+
+	socket.on("speedUpdate", (speedVal) => {
+		socket.broadcast.emit("speedUpdate", speedVal)
+	})
+
+	socket.on("revUpdate", (revVal) => {
+		socket.broadcast.emit("speedUpdate", revVal)
+	})
 })
 
 httpServer.listen(5000, () => {
