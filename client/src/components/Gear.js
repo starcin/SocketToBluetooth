@@ -1,6 +1,15 @@
+import { useState } from "react"
+
 function Gear({ gear }) {
+	const [mouseY, setMouseY] = useState(0)
+	let selectedElement = false
+	let drag = false
 	const gearSvg = (
 		<svg
+			onMouseDown={dragKnob}
+			onMouseUp={dragKnob}
+			onMouseLeave={dragKnob}
+			onMouseMove={dragKnob}
 			width="140"
 			height="400"
 			viewBox="0 0 140 400"
@@ -29,7 +38,7 @@ function Gear({ gear }) {
 				id="N"
 				d="M120 360H114.004L103.203 341.562V360H97.5977V331.992H103.594L114.395 350.449V331.992H120V360Z"
 			/>
-			<g id="knob" transform={`translate(0,0)`}>
+			<g className="draggable" id="knob" transform={`translate(0,${mouseY}) `}>
 				<circle id="knob_2" cx="38" cy="345" r="29" fill="#C4BEB6" />
 				<circle id="knob_3" cx="38" cy="345" r="27" fill="#212322" />
 				<rect
@@ -62,6 +71,24 @@ function Gear({ gear }) {
 			</g>
 		</svg>
 	)
+
+	function dragKnob(e) {
+		let CTM = e.target.getScreenCTM()
+		if (e.type === "mousedown") {
+			drag = e.target.parentNode.id === "knob" ? true : false
+			console.log("down")
+		} else if (
+			e.type === "mousemove" &&
+			drag // &&
+			// e.target.parentNode.id === "knob"
+		) {
+			console.log("drag")
+			setMouseY((e.clientY - CTM.f) / CTM.d)
+			console.log(mouseY)
+		} else if (e.type === "mouseup" || e.type === "mouseleave") {
+			drag = false
+		}
+	}
 
 	return <div className="gearbox">{gearSvg}</div>
 }
