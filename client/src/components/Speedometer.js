@@ -127,29 +127,7 @@ function Speedometer({ speed }) {
 		</svg>
 	)
 
-	const needleSvg = (
-		<svg
-			width="8"
-			height="46"
-			viewBox="0 0 8 46"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M1.09476 41.6734L4 1L6.90524 41.6734C6.96543 42.516 6.65685 43.3431 6.05955 43.9404C4.92209 45.0779 3.07791 45.0779 1.94045 43.9404C1.34315 43.3431 1.03457 42.516 1.09476 41.6734Z"
-				fill="#E65300"
-				stroke="black"
-				strokeOpacity="0.5"
-			/>
-		</svg>
-	)
-
-	return (
-		<div className="speedometer">
-			{dialSvg}
-			{needleSvg}
-		</div>
-	)
+	return <div className="speedometer">{dialSvg}</div>
 }
 
 export default Speedometer

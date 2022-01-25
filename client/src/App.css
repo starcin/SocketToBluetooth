@@ -38,3 +38,17 @@ svg {
 .speedometer {
 	width: 250px;
 }
+
+.gearbox {
+	width: 150px;
+}
+
+.gear_lit {
+	fill: rgb(255, 238, 144);
+	stroke: goldenrod;
+	stroke-width: 0.5%;
+}
+
+.gear_unlit {
+	fill: #c4beb6;
+}

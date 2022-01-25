@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import BucketControl from "./BucketControl"
 import Speedometer from "./Speedometer"
+import Gear from "./Gear"
 import LabelWithValue from "./LabelWithValue"
 
 function ControlPanel({ socket }) {
@@ -40,6 +41,7 @@ function ControlPanel({ socket }) {
 			{/* <button onClick={emitSomething}> BTN</button> */}
 			<BucketControl bucketCommandEvent={onBucketCommand} />
 			<Speedometer speed={speed} />
+			<Gear gear="1" />
 			<LabelWithValue label={"Speed"} value={speed} post={"km/h"} />
 			<LabelWithValue label={"Rev"} value={rev} post={"rpm"} />
 			<LabelWithValue label={"Gear"} value={gear} />
